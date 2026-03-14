@@ -1,0 +1,303 @@
+/* Atlantis Empire - style.css */
+
+:root {
+    --primary-red: #FF5733;
+    --primary-blue: #1A73E8;
+    --dark-bg: #111;
+    --light-bg: #181818;
+    --text-color: #fff;
+    --transition-duration: 0.3s;
+    --font-family: 'Arial', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-duration); /* Smooth transition for theme changes */
+}
+
+/* Global Styles */
+h1, h2, h3 {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color var(--transition-duration);
+}
+
+a:hover {
+    color: var(--primary-red);
+}
+
+button, input[type="submit"] {
+    background-color: var(--primary-blue);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--primary-red);
+    color: var(--dark-bg);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--light-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('atlantis-emblem.png'); /* Replace with actual image or check for valid file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* About the Clan Section */
+.about-clan {
+    padding: 50px;
+    background-color: var(--light-bg);
+}
+
+.about-clan h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about-clan p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Clan Members Section */
+.clan-members {
+    padding: 50px;
+}
+
+.clan-members h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add visual space between member cards */
+}
+
+.member {
+    background-color: var(--primary-blue);
+    color: var(--dark-bg);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color var(--transition-duration);
+    flex: 1 1 calc(25% - 20px); /* Responsive layout for members, fit four cards per row */
+}
+
+.member:hover {
+    background-color: var(--primary-red);
+}
+
+.member h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Join Clan Button */
+.join-clan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjusted for better scaling across resolutions */
+    padding: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.join-clan button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Form Styles (form.html) */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-bg);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px); /* Fixing potential width overflow */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Allow resizing only vertically */
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Pending Page Styles (pending.html) */
+.pending-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.pending-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.pending-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Admin Control Page Styles (ad273.htm) */
+.admin-control {
+    padding: 50px;
+    text-align: center;
+}
+
+.admin-control h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.admin-control button {
+    font-size: 1.1rem;
+    margin: 10px;
+    padding: 12px 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-clan, .clan-members {
+        padding: 30px 20px;
+    }
+
+    .member {
+        flex: 1 1 100%;
+    }
+
+    .join-clan {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .join-clan button {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduced text size for smaller screens */
+    }
+}
